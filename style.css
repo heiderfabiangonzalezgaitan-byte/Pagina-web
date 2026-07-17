@@ -460,3 +460,10 @@ section {
         height: 250px;
     }
 }
+ <p style="color: #a0a5c0; margin-bottom: 20px;">Filtra por categoría o haz clic sobre cualquier tarjeta para ver más detalles del servicio.</p>
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterSelection('todos')">Todos</button>
+            <button class="filter-btn" onclick="filterSelection('diseno')">Diseño y Marca</button>
+            <button class="filter-btn" onclick="filterSelection('video')">Audiovisual</button>
+            <button class="filter-btn" onclick="filterSelection('fotografia')">Fotografía</button>
+        </div>
