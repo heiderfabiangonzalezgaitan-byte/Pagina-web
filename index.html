@@ -1,1 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Multimedia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <div class="bg-glow">
+        <div class="neon-light light-1"></div>
+        <div class="neon-light light-2"></div>
+        <div class="neon-light light-3"></div>
+    </div>
+
+    <nav>
+        <div class="logo">Portafolio HF</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#portafolio">Portafolio</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section id="inicio">
+        <div class="hero-content">
+            <h1>Donde la creatividad se encuentra con la tecnología para <span>contar historias que impactan</span></h1>
+            <p>Soy Fabian Gonzalez creador de contenido multimedia. En este espacio encontrarás una selección de mis mejores proyectos, donde combino diseño, audio, video y narrativa digital para transformar ideas en experiencias visuales impactantes. Te invito a explorar mi trabajo.</p>
+            <a href="#portafolio" class="cta-btn">Explorar Trabajo <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <section id="portafolio" class="reveal">
+        <h2 class="section-title">Mis Creaciones</h2>
+        <p style="color: #a0a5c0; margin-bottom: 20px;">Filtra por categoría o haz clic sobre cualquier tarjeta para ver más detalles del servicio.</p>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterSelection('todos')">Todos</button>
+            <button class="filter-btn" onclick="filterSelection('diseno')">Diseño y Marca</button>
+            <button class="filter-btn" onclick="filterSelection('video')">Audiovisual</button>
+            <button class="filter-btn" onclick="filterSelection('fotografia')">Fotografía</button>
+        </div>
+
+        <div class="portfolio-grid">
+            
+            <div class="portfolio-item diseno" 
+                 data-title="Creación de Logos" 
+                 data-tag="Diseño y Marca"
+                 data-img="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" 
+                 data-desc="Creamos el núcleo de tu identidad. Diseñamos logotipos desde cero, vectorizados y listos para usar en cualquier formato. Nos enfocamos en la versatilidad de la marca, asegurando que se adapte perfectamente tanto a medios digitales como a impresos.">
+                <div class="item-thumb">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" alt="Creación de Logos">
+                </div>
+                <div class="item-info">
+                    <h3>Creación de Logos</h3>
+                    <p>Diseño el corazón visual de tu marca.</p>
+                    <span class="tag">Diseño y Marca</span>
+                </div>
+            </div>
+            
+            <div class="portfolio-item diseno" 
+                 data-title="Diseño de Flyers Publicitarios" 
+                 data-tag="Diseño y Marca"
+                 data-img="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=600&q=80" 
+                 data-desc="Piezas gráficas diseñadas estratégicamente para impactar. Ideal para pautas publicitarias en redes sociales, eventos o volantes impresos. Estructuramos la jerarquía visual de la información para guiar al usuario a tomar acción inmediata.">
+                <div class="item-thumb">
+                    <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=600&q=80" alt="Flyers Publicitarios">
+                </div>
+                <div class="item-info">
+                    <h3>Diseño de Flyers Publicitarios</h3>
+                    <p>Piezas visuales e impactantes creadas para difundir un mensaje claro y efectivo.</p>
+                    <span class="tag">Diseño y Marca</span>
+                </div>
+            </div>
+
+            <div class="portfolio-item diseno" 
+                 data-title="Identidad de Marca Integral" 
+                 data-tag="Diseño y Marca"
+                 data-img="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80" 
+                 data-desc="Desarrollo completo del ecosistema visual de tu marca. Incluye manual de identidad, paleta de colores corporativa, tipografías primarias/secundarias y las pautas gráficas esenciales para que tu negocio sea reconocido instantáneamente en el mercado.">
+                <div class="item-thumb">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80" alt="Identidad de Marca Integral">
+                </div>
+                <div class="item-info">
+                    <h3>Identidad de Marca Integral</h3>
+                    <p>Construimos todo el ecosistema gráfico y conceptual de tu negocio.</p>
+                    <span class="tag">Diseño y Marca</span>
+                </div>
+            </div>
+
+            <div class="portfolio-item video" 
+                 data-title="Contenido Audiovisual para Redes Sociales" 
+                 data-tag="Audiovisual"
+                 data-img="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=600&q=80" 
+                 data-desc="Vídeos adaptados al ritmo de las plataformas modernas (Reels, TikToks y Shorts). Nos encargamos de estructurar un guion con gancho en los primeros segundos, transiciones dinámicas, subtítulos animados y diseño de audio envolvente para elevar tu engagement.">
+                <div class="item-thumb">
+                    <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=600&q=80" alt="Audiovisual Redes Sociales">
+                </div>
+                <div class="item-info">
+                    <h3>Contenido Audiovisual para RRSS</h3>
+                    <p>Montaje dinámico, edición y creación de formatos cortos de alta retención.</p>
+                    <span class="tag">Audiovisual</span>
+                </div>
+            </div>
+
+            <div class="portfolio-item fotografia" 
+                 data-title="Fotografía de Producto y Corporativa" 
+                 data-tag="Fotografía"
+                 data-img="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=600&q=80" 
+                 data-desc="Sesiones fotográficas de alta calidad para capturar la mejor perspectiva de tu producto. Ideal para catálogos, e-commerce o redes sociales. También realizamos retratos de tu equipo de trabajo para proyectar una imagen sólida y confiable.">
+                <div class="item-thumb">
+                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=600&q=80" alt="Fotografía Profesional">
+                </div>
+                <div class="item-info">
+                    <h3>Fotografía de Producto y Corp</h3>
+                    <p>Capturas profesionales con iluminación y dirección artística adaptada a tu sector.</p>
+                    <span class="tag">Fotografía</span>
+                </div>
+            </div>
+
+            <div class="portfolio-item video" 
+                 data-title="Paquete Mensual de Contenido" 
+                 data-tag="Audiovisual"
+                 data-img="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80" 
+                 data-desc="Olvídate de pensar qué publicar cada semana. Este plan mensual incluye la estrategia integral del contenido de tu marca: diseño de plantillas, edición de Reels de alta calidad, copys estructurados y planeación estratégica de publicaciones.">
+                <div class="item-thumb">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80" alt="Paquete Mensual">
+                </div>
+                <div class="item-info">
+                    <h3>Paquete Mensual de Contenido</h3>
+                    <p>Gestión completa de tu presencia digital con contenido estratégico y regular.</p>
+                    <span class="tag">Audiovisual</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modal-img" src="" alt="Previsualización de proyecto">
+                </div>
+                <div class="modal-text-container">
+                    <span id="modal-tag" class="tag">Categoría</span>
+                    <h2 id="modal-title" style="margin-top: 10px;">Título</h2>
+                    <p id="modal-desc">Descripción detallada</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="contacto" class="reveal">
+        <div class="contact-box">
+            <h2 class="section-title" style="margin-bottom: 15px; background: linear-gradient(45deg, var(--secondary-accent), var(--accent-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">¿Creamos algo juntos?</h2>
+            <p style="color: #a0a5c0; margin-bottom: 35px; line-height: 1.6; font-size: 1.1rem;">
+                Tienes las ideas y yo tengo las herramientas para darles vida.<br> 
+                Trabajo con marcas independientes, agencias y creadores que buscan destacar con contenido audiovisual, diseño con propósito y fotografía de otro nivel.<br> 
+                ¡Cuéntame tu proyecto y pongámonos en marcha!
+            </p>
+            <a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="cta-btn" style="background: #25d366; color:#fff; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); font-size: 1.1rem; padding: 16px 40px;">
+                <i class="fab fa-whatsapp"></i> Iniciar Chat
+            </a>
+        </div>
+    </section>
+
+    <a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="boton-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // 1. FILTRADO INTERACTIVO DE PROYECTOS
+        function filterSelection(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            buttons.forEach(btn => {
+                let match = false;
+                if (category === 'todos' && btn.textContent.toLowerCase().includes('todos')) match = true;
+                if (category === 'diseno' && btn.textContent.toLowerCase().includes('diseño')) match = true;
+                if (category === 'video' && btn.textContent.toLowerCase().includes('audiovisual')) match = true;
+                if (category === 'fotografia' && btn.textContent.toLowerCase().includes('fotografía')) match = true;
+
+                if(match) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            items.forEach(item => {
+                if (category === 'todos' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // 2. SCROLL REVEAL (Animación al deslizar)
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 120;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('DOMContentLoaded', reveal);
+
+        // 3. CONTROL DEL MODAL DINÁMICO
+        const modal = document.getElementById('project-modal');
+        const closeModal = document.querySelector('.close-modal');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const title = item.getAttribute('data-title');
+                const desc = item.getAttribute('data-desc');
+                const img = item.getAttribute('data-img');
+                const tag = item.getAttribute('data-tag');
+
+                document.getElementById('modal-title').textContent = title;
+                document.getElementById('modal-desc').textContent = desc;
+                document.getElementById('modal-img').src = img;
+                document.getElementById('modal-tag').textContent = tag;
+
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeModal.addEventListener('click', closeProjectModal);
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeProjectModal();
+            }
+        });
+
+        function closeProjectModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
