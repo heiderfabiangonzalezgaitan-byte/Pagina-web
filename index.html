@@ -5,18 +5,462 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio Multimedia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-     <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-color: #0d0e15;
+            --text-color: #f5f5f7;
+            --accent-color: #00f2fe;
+            --secondary-accent: #4facfe;
+            --card-bg: #161925;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+
+        /* FONDO DINÁMICO DETRÁS DE ABSOLUTAMENTE TODO */
+        .bg-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -999; /* Forzado al fondo absoluto */
+            background-color: var(--bg-color);
+            overflow: hidden;
+            pointer-events: none; /* Evita que interfiera con los clics en la página */
+        }
+
+        /* Las esferas difuminadas de luz neón */
+        .neon-light {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(130px);
+            opacity: 0.15; /* Nivel perfecto de brillo para no cansar la vista */
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
+
+        .light-1 {
+            width: 550px;
+            height: 550px;
+            background: var(--accent-color);
+            top: -10%;
+            left: -10%;
+            animation: float-1 25s infinite alternate ease-in-out;
+        }
+
+        .light-2 {
+            width: 650px;
+            height: 650px;
+            background: var(--secondary-accent);
+            bottom: -15%;
+            right: -10%;
+            animation: float-2 30s infinite alternate ease-in-out;
+        }
+
+        .light-3 {
+            width: 450px;
+            height: 450px;
+            background: #7000ff; /* Toque violeta neón */
+            top: 35%;
+            left: 25%;
+            animation: float-3 22s infinite alternate ease-in-out;
+        }
+
+        /* Animaciones fluidas de movimiento */
+        @keyframes float-1 {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(35vw, 25vh) scale(1.2); }
+            100% { transform: translate(15vw, 55vh) scale(0.95); }
+        }
+
+        @keyframes float-2 {
+            0% { transform: translate(0, 0) scale(1.1); }
+            50% { transform: translate(-30vw, -35vh) scale(0.85); }
+            100% { transform: translate(-10vw, -15vh) scale(1.15); }
+        }
+
+        @keyframes float-3 {
+            0% { transform: translate(0, 0) scale(0.95); }
+            50% { transform: translate(-15vw, 15vh) scale(1.1); }
+            100% { transform: translate(25vw, -10vh) scale(1); }
+        }
+
+        /* Menú de Navegación */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(13, 14, 21, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100; /* Por encima de las luces */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--secondary-accent), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--accent-color); }
+
+        /* Secciones */
+        section {
+            padding: 120px 8% 60px 8%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 10; /* Contenido por encima de las luces */
+        }
+
+        /* Efecto de Aparición Suave */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Sección de Inicio (Hero) */
+        #inicio { text-align: center; }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(45deg, var(--secondary-accent), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #a0a5c0;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        .cta-btn {
+            background: linear-gradient(45deg, var(--secondary-accent), var(--accent-color));
+            color: #000;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 242, 254, 0.6);
+        }
+
+        /* Portafolio */
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .filter-container {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-color);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--accent-color);
+            color: #000;
+            border-color: var(--accent-color);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.4s, box-shadow 0.4s, opacity 0.4s, scale 0.4s;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2);
+            border-color: rgba(0, 242, 254, 0.3);
+        }
+
+        .item-thumb {
+            height: 200px;
+            background: #1f2335;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .item-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .portfolio-item:hover .item-thumb img {
+            transform: scale(1.1);
+        }
+
+        .item-info { padding: 20px; }
+        .item-info h3 { margin-bottom: 10px; font-size: 1.2rem; }
+        .item-info p { color: #a0a5c0; font-size: 0.9rem; line-height: 1.5; }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--accent-color);
+            padding: 3px 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        /* Sección Contacto */
+        #contacto { text-align: center; align-items: center; }
+        
+        .contact-box {
+            background: var(--card-bg);
+            padding: 50px 40px;
+            border-radius: 24px;
+            max-width: 650px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Botón Fijo Flotante de WhatsApp */
+        .boton-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .boton-whatsapp:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        /* VENTANA MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(13, 14, 21, 0.95);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 242, 254, 0.2);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 35px;
+            color: #a0a5c0;
+            cursor: pointer;
+            transition: color 0.3s;
+            z-index: 2001;
+        }
+
+        .close-modal:hover {
+            color: var(--accent-color);
+        }
+
+        .modal-body {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .modal-image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1f2335;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            height: 350px;
+        }
+
+        .modal-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-text-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .modal-text-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, var(--secondary-accent), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .modal-text-container p {
+            color: #a0a5c0;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2.3rem; }
+            section { padding: 100px 5% 40px 5%; }
+            .modal-body {
+                grid-template-columns: 1fr;
+                padding: 40px 20px 20px 20px;
+            }
+            .modal-image-container {
+                height: 250px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Fondo Dinámico -->
     <div class="bg-glow">
         <div class="neon-light light-1"></div>
         <div class="neon-light light-2"></div>
         <div class="neon-light light-3"></div>
     </div>
 
-    <!-- Menú de Navegación -->
     <nav>
         <div class="logo">Portafolio HF</div>
         <ul class="nav-links">
@@ -26,7 +470,6 @@
         </ul>
     </nav>
 
-    <!-- Sección de Inicio (Hero) -->
     <section id="inicio">
         <div class="hero-content">
             <h1>Donde la creatividad se encuentra con la tecnología para <span>contar historias que impactan</span></h1>
@@ -35,16 +478,15 @@
         </div>
     </section>
 
-    <!-- Portafolio -->
     <section id="portafolio" class="reveal">
         <h2 class="section-title">Mis Creaciones</h2>
-        <p>Filtra por categoría o haz clic sobre cualquier tarjeta para ver más detalles del servicio.</p>
+        <p style="color: #a0a5c0; margin-bottom: 20px;">Filtra por categoría o haz clic sobre cualquier tarjeta para ver más detalles del servicio.</p>
         
         <div class="filter-container">
-            <button class="filter-btn active">Todos</button>
-            <button class="filter-btn">Diseño y Marca</button>
-            <button class="filter-btn">Audiovisual</button>
-            <button class="filter-btn">Fotografía</button>
+            <button class="filter-btn active" onclick="filterSelection('todos')">Todos</button>
+            <button class="filter-btn" onclick="filterSelection('diseno')">Diseño y Marca</button>
+            <button class="filter-btn" onclick="filterSelection('video')">Audiovisual</button>
+            <button class="filter-btn" onclick="filterSelection('fotografia')">Fotografía</button>
         </div>
 
         <div class="portfolio-grid">
@@ -141,7 +583,6 @@
         </div>
     </section>
 
-    <!-- Ventana Modal -->
     <div id="project-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -151,32 +592,119 @@
                 </div>
                 <div class="modal-text-container">
                     <span id="modal-tag" class="tag">Categoría</span>
-                    <h2 id="modal-title">Título</h2>
+                    <h2 id="modal-title" style="margin-top: 10px;">Título</h2>
                     <p id="modal-desc">Descripción detallada</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Contacto -->
     <section id="contacto" class="reveal">
         <div class="contact-box">
-            <h2 class="section-title">¿Creamos algo juntos?</h2>
-            <p>
+            <h2 class="section-title" style="margin-bottom: 15px; background: linear-gradient(45deg, var(--secondary-accent), var(--accent-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">¿Creamos algo juntos?</h2>
+            <p style="color: #a0a5c0; margin-bottom: 35px; line-height: 1.6; font-size: 1.1rem;">
                 Tienes las ideas y yo tengo las herramientas para darles vida.<br> 
                 Trabajo con marcas independientes, agencias y creadores que buscan destacar con contenido audiovisual, diseño con propósito y fotografía de otro nivel.<br> 
                 ¡Cuéntame tu proyecto y pongámonos en marcha!
             </p>
-            <a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="cta-btn">
+            <a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="cta-btn" style="background: #25d366; color:#fff; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); font-size: 1.1rem; padding: 16px 40px;">
                 <i class="fab fa-whatsapp"></i> Iniciar Chat
             </a>
         </div>
     </section>
 
-    <!-- Botón Flotante de WhatsApp -->
     <a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="boton-whatsapp">
         <i class="fab fa-whatsapp"></i>
     </a>
-  <script src="js/script.js"></script>
+
+    <script>
+        // 1. FILTRADO INTERACTIVO DE PROYECTOS
+        function filterSelection(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            buttons.forEach(btn => {
+                let match = false;
+                if (category === 'todos' && btn.textContent.toLowerCase().includes('todos')) match = true;
+                if (category === 'diseno' && btn.textContent.toLowerCase().includes('diseño')) match = true;
+                if (category === 'video' && btn.textContent.toLowerCase().includes('audiovisual')) match = true;
+                if (category === 'fotografia' && btn.textContent.toLowerCase().includes('fotografía')) match = true;
+
+                if(match) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            items.forEach(item => {
+                if (category === 'todos' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // 2. SCROLL REVEAL (Animación al deslizar)
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 120;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('DOMContentLoaded', reveal);
+
+        // 3. CONTROL DEL MODAL DINÁMICO
+        const modal = document.getElementById('project-modal');
+        const closeModal = document.querySelector('.close-modal');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const title = item.getAttribute('data-title');
+                const desc = item.getAttribute('data-desc');
+                const img = item.getAttribute('data-img');
+                const tag = item.getAttribute('data-tag');
+
+                document.getElementById('modal-title').textContent = title;
+                document.getElementById('modal-desc').textContent = desc;
+                document.getElementById('modal-img').src = img;
+                document.getElementById('modal-tag').textContent = tag;
+
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeModal.addEventListener('click', closeProjectModal);
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeProjectModal();
+            }
+        });
+
+        function closeProjectModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
 </body>
 </html>
