@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio Multimedia</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Fondo Dinámico -->
     <div class="bg-glow">
         <div class="neon-light light-1"></div>
         <div class="neon-light light-2"></div>
         <div class="neon-light light-3"></div>
     </div>
+
+    <!-- Menú de Navegación -->
     <nav>
         <div class="logo">Portafolio HF</div>
         <ul class="nav-links">
@@ -21,6 +25,8 @@
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
+
+    <!-- Sección de Inicio (Hero) -->
     <section id="inicio">
         <div class="hero-content">
             <h1>Donde la creatividad se encuentra con la tecnología para <span>contar historias que impactan</span></h1>
@@ -28,10 +34,21 @@
             <a href="#portafolio" class="cta-btn">Explorar Trabajo <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
+
+    <!-- Portafolio -->
     <section id="portafolio" class="reveal">
         <h2 class="section-title">Mis Creaciones</h2>
-       
+        <p>Filtra por categoría o haz clic sobre cualquier tarjeta para ver más detalles del servicio.</p>
+        
+        <div class="filter-container">
+            <button class="filter-btn active">Todos</button>
+            <button class="filter-btn">Diseño y Marca</button>
+            <button class="filter-btn">Audiovisual</button>
+            <button class="filter-btn">Fotografía</button>
+        </div>
+
         <div class="portfolio-grid">
+            
             <div class="portfolio-item diseno" 
                  data-title="Creación de Logos" 
                  data-tag="Diseño y Marca"
@@ -61,6 +78,7 @@
                     <span class="tag">Diseño y Marca</span>
                 </div>
             </div>
+
             <div class="portfolio-item diseno" 
                  data-title="Identidad de Marca Integral" 
                  data-tag="Diseño y Marca"
@@ -123,6 +141,7 @@
         </div>
     </section>
 
+    <!-- Ventana Modal -->
     <div id="project-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -132,31 +151,32 @@
                 </div>
                 <div class="modal-text-container">
                     <span id="modal-tag" class="tag">Categoría</span>
-                    <h2 id="modal-title" style="margin-top: 10px;">Título</h2>
+                    <h2 id="modal-title">Título</h2>
                     <p id="modal-desc">Descripción detallada</p>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Contacto -->
     <section id="contacto" class="reveal">
         <div class="contact-box">
-            <h2 class="section-title" style="margin-bottom: 15px; background: linear-gradient(45deg, var(--secondary-accent), var(--accent-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">¿Creamos algo juntos?</h2>
-            <p style="color: #a0a5c0; margin-bottom: 35px; line-height: 1.6; font-size: 1.1rem;">
+            <h2 class="section-title">¿Creamos algo juntos?</h2>
+            <p>
                 Tienes las ideas y yo tengo las herramientas para darles vida.<br> 
                 Trabajo con marcas independientes, agencias y creadores que buscan destacar con contenido audiovisual, diseño con propósito y fotografía de otro nivel.<br> 
                 ¡Cuéntame tu proyecto y pongámonos en marcha!
             </p>
-            <a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="cta-btn" style="background: #25d366; color:#fff; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); font-size: 1.1rem; padding: 16px 40px;">
+            <a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="cta-btn">
                 <i class="fab fa-whatsapp"></i> Iniciar Chat
             </a>
         </div>
     </section>
 
+    <!-- Botón Flotante de WhatsApp -->
     <a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="boton-whatsapp">
         <i class="fab fa-whatsapp"></i>
     </a>
-
-    <script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
