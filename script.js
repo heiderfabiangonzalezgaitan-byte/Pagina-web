@@ -1,4 +1,7 @@
-// 1. FILTRADO INTERACTIVO DE PROYECTOS
+// Añade esto en la primera línea de tu js/script.js
+document.body.classList.add('js-ready');
+
+// El resto de tu código de filtrado y modal sigue igual abajo...// 1. FILTRADO INTERACTIVO DE PROYECTOS
 function filterSelection(category) {
     const items = document.querySelectorAll('.portfolio-item');
     const buttons = document.querySelectorAll('.filter-btn');
