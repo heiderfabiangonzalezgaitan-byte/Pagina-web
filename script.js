@@ -1,4 +1,4 @@
- <script>
+       });
         // 1. FILTRADO INTERACTIVO DE PROYECTOS
         function filterSelection(category) {
             const items = document.querySelectorAll('.portfolio-item');
@@ -86,4 +86,3 @@
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
-    </script>
