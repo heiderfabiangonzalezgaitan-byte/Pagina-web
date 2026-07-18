@@ -51,40 +51,7 @@
         window.addEventListener('scroll', reveal);
         window.addEventListener('DOMContentLoaded', reveal);
 
-        // 3. CONTROL DEL MODAL DINÁMICO
-        const modal = document.getElementById('project-modal');
-        const closeModal = document.querySelector('.close-modal');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-        portfolioItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const title = item.getAttribute('data-title');
-                const desc = item.getAttribute('data-desc');
-                const img = item.getAttribute('data-img');
-                const tag = item.getAttribute('data-tag');
-
-                document.getElementById('modal-title').textContent = title;
-                document.getElementById('modal-desc').textContent = desc;
-                document.getElementById('modal-img').src = img;
-                document.getElementById('modal-tag').textContent = tag;
-
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        closeModal.addEventListener('click', closeProjectModal);
-
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeProjectModal();
-            }
-        });
-
-        function closeProjectModal() {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }  
+      
 // 3. CONTROL DEL MODAL DINÁMICO CON CARRUSEL INTEGRADO
 const modal = document.getElementById('project-modal');
 const closeModal = document.querySelector('.close-modal');
