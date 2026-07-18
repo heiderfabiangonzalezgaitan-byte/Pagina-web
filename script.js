@@ -4,7 +4,7 @@
             const items = document.querySelectorAll('.portfolio-item');
             const buttons = document.querySelectorAll('.filter-btn');
             
-            buttons.forEach(btn => {
+           });  buttons.forEach(btn => {
                 let match = false;
                 if (category === 'todos' && btn.textContent.toLowerCase().includes('todos')) match = true;
                 if (category === 'diseno' && btn.textContent.toLowerCase().includes('diseño')) match = true;
