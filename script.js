@@ -1,4 +1,4 @@
-       });
+       }
         // 1. FILTRADO INTERACTIVO DE PROYECTOS
         function filterSelection(category) {
             const items = document.querySelectorAll('.portfolio-item');
