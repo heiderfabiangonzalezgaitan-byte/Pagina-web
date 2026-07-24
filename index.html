@@ -11,206 +11,183 @@
  <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
 </head>
-
 <body>
 
-<div class="vignette"></div>
-<div class="grain"></div>
+  <canvas id="canvas-bg"></canvas>
+  <div class="cyber-grid"></div>
+  <div class="scanline"></div>
 
-<nav>
-  <div class="logo">Fabián <span>González</span></div>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#portafolio">Portafolio</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-    <li><a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="nav-cta">Cotizar</a></li>
-  </ul>
-  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+  <header>
+    <div class="logo">Fabián <span>González</span></div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">// Inicio</a></li>
+        <li><a href="#portafolio">// Portafolio</a></li>
+        <li><a href="#skills">// Skills</a></li>
+        <li><a href="#proceso">// Proceso</a></li>
+        <li><a href="#contacto">// Contacto</a></li>
+        <li><a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="nav-cta">Cotizar</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section id="inicio">
-  <div class="hero-content">
-    <span class="eyebrow">Creador de contenido multimedia</span>
-    <h1>Donde la creatividad se encuentra con la tecnología para <em>contar historias que impactan</em></h1>
-    <p>Soy Fabián González. En este espacio encontrarás una selección de mis mejores proyectos, donde combino diseño, audio, video y narrativa digital para transformar ideas en experiencias visuales impactantes.</p>
-    <div class="hero-actions">
-      <a href="#portafolio" class="cta-btn">Explorar trabajo <i class="fas fa-arrow-right"></i></a>
-      <a href="#contacto" class="cta-ghost">Hablemos de tu proyecto</a>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="frame">
-      <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=800&q=80" alt="Producción audiovisual" onerror="this.style.opacity='0'">
-      <div class="hero-tag">Bogotá, Colombia <span>Diseño · Video · Fotografía</span></div>
-    </div>
-  </div>
-</section>
-
-<div class="marquee-wrap">
-  <div class="marquee">
-    <span>Diseño de marca <i class="fas fa-circle"></i> Edición de video <i class="fas fa-circle"></i> Fotografía de producto <i class="fas fa-circle"></i> Contenido para redes <i class="fas fa-circle"></i> Narrativa digital <i class="fas fa-circle"></i></span>
-    <span>Diseño de marca <i class="fas fa-circle"></i> Edición de video <i class="fas fa-circle"></i> Fotografía de producto <i class="fas fa-circle"></i> Contenido para redes <i class="fas fa-circle"></i> Narrativa digital <i class="fas fa-circle"></i></span>
-  </div>
-</div>
-
-<section id="portafolio" class="reveal">
-  <div class="section-head">
-    <span class="eyebrow">Trabajo seleccionado</span>
-    <h2 class="section-title">Mis creaciones</h2>
-    <p class="section-sub">Filtra por categoría o haz clic sobre cualquier tarjeta para ver más detalles del servicio.</p>
-  </div>
-
-  <div class="filter-container">
-    <button class="filter-btn active" onclick="filterSelection('todos')">Todos</button>
-    <button class="filter-btn" onclick="filterSelection('diseno')">Diseño y Marca</button>
-    <button class="filter-btn" onclick="filterSelection('video')">Audiovisual</button>
-    <button class="filter-btn" onclick="filterSelection('fotografia')">Fotografía</button>
-  </div>
-
-  <div class="portfolio-grid">
-
-    <div class="portfolio-item diseno"
-         data-title="Creación de Logos"
-         data-tag="Diseño y Marca"
-         data-img="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80"
-         data-desc="Creamos el núcleo de tu identidad. Diseñamos logotipos desde cero, vectorizados y listos para usar en cualquier formato. Nos enfocamos en la versatilidad de la marca, asegurando que se adapte perfectamente tanto a medios digitales como a impresos.">
-      <div class="item-thumb">
-        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" alt="Creación de Logos" onerror="this.style.opacity='0'">
-      </div>
-      <div class="item-info">
-        <h3>Creación de Logos</h3>
-        <p>Diseño el corazón visual de tu marca.</p>
-        <span class="tag">Diseño y Marca</span>
+  <section class="hero" id="inicio">
+    <div>
+      <div class="badge-status">● CREADOR DE CONTENIDO MULTIMEDIA</div>
+      <h1>Donde la creatividad se encuentra con la tecnología para <em>contar historias que impactan</em></h1>
+      <p>Soy Fabián González. En este espacio encontrarás una selección de mis mejores proyectos, donde combino diseño, audio, video y narrativa digital para transformar ideas en experiencias visuales impactantes.</p>
+      <div class="hero-actions">
+        <a href="#portafolio" class="btn-cyber">Explorar trabajo <i class="fas fa-arrow-right"></i></a>
+        <a href="#contacto" class="btn-ghost">Hablemos de tu proyecto</a>
       </div>
     </div>
-
-    <div class="portfolio-item diseno"
-         data-title="Diseño de Flyers Publicitarios"
-         data-tag="Diseño y Marca"
-         data-img="https://drive.google.com/file/d/1DOpZWe29JVBcHtnxepFxKtxxHMfVBAfF/view?usp=drive_link"
-         data-desc="Piezas gráficas diseñadas estratégicamente para impactar. Ideal para pautas publicitarias en redes sociales, eventos o volantes impresos. Estructuramos la jerarquía visual de la información para guiar al usuario a tomar acción inmediata.">
-      <div class="item-thumb">
-        <img src="https://drive.google.com/file/d/1DOpZWe29JVBcHtnxepFxKtxxHMfVBAfF/view?usp=drive_link" alt="Flyers Publicitarios" onerror="this.style.opacity='0'">
-      </div>
-      <div class="item-info">
-        <h3>Diseño de Flyers Publicitarios</h3>
-        <p>Piezas visuales e impactantes creadas para difundir un mensaje claro y efectivo.</p>
-        <span class="tag">Diseño y Marca</span>
-      </div>
+    <div class="hero-visual">
+      <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=800&q=80" alt="Producción Audiovisual">
+      <div class="hero-tag">Bogotá, Colombia // Diseño · Video · Fotografía</div>
     </div>
+  </section>
 
-    <div class="portfolio-item diseno"
-         data-title="Identidad de Marca Integral"
-         data-tag="Diseño y Marca"
-         data-img="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80"
-         data-desc="Desarrollo completo del ecosistema visual de tu marca. Incluye manual de identidad, paleta de colores corporativa, tipografías primarias/secundarias y las pautas gráficas esenciales para que tu negocio sea reconocido instantáneamente en el mercado.">
-      <div class="item-thumb">
-        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80" alt="Identidad de Marca Integral" onerror="this.style.opacity='0'">
-      </div>
-      <div class="item-info">
-        <h3>Identidad de Marca Integral</h3>
-        <p>Construimos todo el ecosistema gráfico y conceptual de tu negocio.</p>
-        <span class="tag">Diseño y Marca</span>
-      </div>
-    </div>
-
-    <div class="portfolio-item video"
-         data-title="Contenido Audiovisual para Redes Sociales"
-         data-tag="Audiovisual"
-         data-img="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=600&q=80"
-         data-desc="Vídeos adaptados al ritmo de las plataformas modernas (Reels, TikToks y Shorts). Nos encargamos de estructurar un guion con gancho en los primeros segundos, transiciones dinámicas, subtítulos animados y diseño de audio envolvente para elevar tu engagement.">
-      <div class="item-thumb">
-        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=600&q=80" alt="Audiovisual Redes Sociales" onerror="this.style.opacity='0'">
-      </div>
-      <div class="item-info">
-        <h3>Contenido Audiovisual para RRSS</h3>
-        <p>Montaje dinámico, edición y creación de formatos cortos de alta retención.</p>
-        <span class="tag">Audiovisual</span>
-      </div>
-    </div>
-
-    <div class="portfolio-item fotografia"
-         data-title="Fotografía de Producto y Corporativa"
-         data-tag="Fotografía"
-         data-img="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=600&q=80"
-         data-desc="Sesiones fotográficas de alta calidad para capturar la mejor perspectiva de tu producto. Ideal para catálogos, e-commerce o redes sociales. También realizamos retratos de tu equipo de trabajo para proyectar una imagen sólida y confiable.">
-      <div class="item-thumb">
-        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=600&q=80" alt="Fotografía Profesional" onerror="this.style.opacity='0'">
-      </div>
-      <div class="item-info">
-        <h3>Fotografía de Producto y Corp</h3>
-        <p>Capturas profesionales con iluminación y dirección artística adaptada a tu sector.</p>
-        <span class="tag">Fotografía</span>
-      </div>
-    </div>
-
-    <div class="portfolio-item video"
-         data-title="Paquete Mensual de Contenido"
-         data-tag="Audiovisual"
-         data-img="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80"
-         data-desc="Olvídate de pensar qué publicar cada semana. Este plan mensual incluye la estrategia integral del contenido de tu marca: diseño de plantillas, edición de Reels de alta calidad, copys estructurados y planeación estratégica de publicaciones.">
-      <div class="item-thumb">
-        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80" alt="Paquete Mensual" onerror="this.style.opacity='0'">
-      </div>
-      <div class="item-info">
-        <h3>Paquete Mensual de Contenido</h3>
-        <p>Gestión completa de tu presencia digital con contenido estratégico y regular.</p>
-        <span class="tag">Audiovisual</span>
-      </div>
-    </div>
-
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-number">+50</div><div class="stat-label">Proyectos Completados</div></div>
+    <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Entrega a Tiempo</div></div>
+    <div class="stat-item"><div class="stat-number">+3 Años</div><div class="stat-label">Experiencia Digital</div></div>
+    <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Soporte Directo</div></div>
   </div>
-</section>
 
-<div class="sprocket-rule"></div>
-
-<div id="project-modal" class="modal">
-  <div class="modal-content">
-    <span class="close-modal">&times;</span>
-    <div class="modal-body">
-      <div class="modal-image-container">
-        <img id="modal-img" alt="Previsualización de proyecto">
-        <i class="fas fa-image" style="position:absolute; color:var(--gold-soft); font-size:1.8rem; opacity:.45;"></i>
-      </div>
-      <div class="modal-text-container">
-        <span id="modal-tag" class="tag">Categoría</span>
-        <h2 id="modal-title">Título</h2>
-        <p id="modal-desc">Descripción detallada</p>
-      </div>
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span>Diseño de marca <i class="fas fa-square"></i> Edición de video <i class="fas fa-square"></i> Fotografía de producto <i class="fas fa-square"></i> Contenido para redes <i class="fas fa-square"></i> Narrativa digital <i class="fas fa-square"></i></span>
+      <span>Diseño de marca <i class="fas fa-square"></i> Edición de video <i class="fas fa-square"></i> Fotografía de producto <i class="fas fa-square"></i> Contenido para redes <i class="fas fa-square"></i> Narrativa digital <i class="fas fa-square"></i></span>
     </div>
   </div>
-</div>
 
-<section id="contacto" class="reveal">
-  <div class="contact-box">
-    <span class="eyebrow">Trabajemos juntos</span>
-    <h2>¿Creamos algo juntos?</h2>
-    <p>
-      Tienes las ideas y yo tengo las herramientas para darles vida.
-      Trabajo con marcas independientes, agencias y creadores que buscan destacar con contenido audiovisual, diseño con propósito y fotografía de otro nivel. ¡Cuéntame tu proyecto y pongámonos en marcha!
-    </p>
-    <a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="cta-btn whatsapp-cta">
-      <i class="fab fa-whatsapp"></i> Iniciar chat
-    </a>
+  <section class="section-container" id="portafolio">
+    <h2 class="section-title">Trabajo Seleccionado</h2>
+    <p class="section-sub">Filtra por categoría o selecciona una tarjeta para ver la galería completa del servicio.</p>
+
+    <div class="filter-container">
+      <button class="filter-btn active" onclick="filterCategory('todos')">TODOS</button>
+      <button class="filter-btn" onclick="filterCategory('diseno')">DISEÑO Y MARCA</button>
+      <button class="filter-btn" onclick="filterCategory('video')">AUDIOVISUAL</button>
+      <button class="filter-btn" onclick="filterCategory('fotografia')">FOTOGRAFÍA</button>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="cyber-card diseno" data-title="Creación de Logos" data-tag="Diseño y Marca" data-gallery-key="logos">
+        <div class="card-thumb"><img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" alt="Creación de Logos"></div>
+        <div class="card-body"><span class="card-tag">// Diseño y Marca</span><h3>Creación de Logos</h3><p>Diseño el corazón visual de tu marca.</p></div>
+      </div>
+
+      <div class="cyber-card diseno" data-title="Diseño de Flyers Publicitarios" data-tag="Diseño y Marca" data-gallery-key="flyers">
+        <div class="card-thumb"><img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=600&q=80" alt="Flyers Publicitarios"></div>
+        <div class="card-body"><span class="card-tag">// Diseño y Marca</span><h3>Diseño de Flyers Publicitarios</h3><p>Piezas visuales e impactantes creadas para difundir un mensaje claro y efectivo.</p></div>
+      </div>
+
+      <div class="cyber-card diseno" data-title="Identidad de Marca Integral" data-tag="Diseño y Marca" data-gallery-key="identidad">
+        <div class="card-thumb"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80" alt="Identidad de Marca Integral"></div>
+        <div class="card-body"><span class="card-tag">// Diseño y Marca</span><h3>Identidad de Marca Integral</h3><p>Construimos todo el ecosistema gráfico y conceptual de tu negocio.</p></div>
+      </div>
+
+      <div class="cyber-card video" data-title="Contenido Audiovisual para Redes Sociales" data-tag="Audiovisual" data-gallery-key="reels">
+        <div class="card-thumb"><img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=600&q=80" alt="Contenido Audiovisual"></div>
+        <div class="card-body"><span class="card-tag">// Audiovisual</span><h3>Contenido Audiovisual para RRSS</h3><p>Montaje dinámico, edición y creación de formatos cortos de alta retención.</p></div>
+      </div>
+
+      <div class="cyber-card fotografia" data-title="Fotografía de Producto y Corporativa" data-tag="Fotografía" data-gallery-key="fotografia">
+        <div class="card-thumb"><img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=600&q=80" alt="Fotografía Profesional"></div>
+        <div class="card-body"><span class="card-tag">// Fotografía</span><h3>Fotografía de Producto y Corp</h3><p>Capturas profesionales con iluminación y dirección artística adaptada a tu sector.</p></div>
+      </div>
+
+      <div class="cyber-card video" data-title="Paquete Mensual de Contenido" data-tag="Audiovisual" data-gallery-key="paquete">
+        <div class="card-thumb"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80" alt="Paquete Mensual"></div>
+        <div class="card-body"><span class="card-tag">// Audiovisual</span><h3>Paquete Mensual de Contenido</h3><p>Gestión completa de tu presencia digital con contenido estratégico y regular.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-container" id="skills">
+    <h2 class="section-title">Dominio Técnico</h2>
+    <p class="section-sub">Herramientas y tecnologías que utilizo para la ejecución de proyectos.</p>
+    <div class="skills-grid">
+      <div class="skill-card"><div class="skill-header"><h4>Edición de Video (Premiere / CapCut)</h4><span>95%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div></div>
+      <div class="skill-card"><div class="skill-header"><h4>Motion Graphics (After Effects)</h4><span>88%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div></div>
+      <div class="skill-card"><div class="skill-header"><h4>Diseño Gráfico (Illustrator / Photoshop)</h4><span>92%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 92%;"></div></div></div>
+      <div class="skill-card"><div class="skill-header"><h4>Fotografía & Edición (Lightroom)</h4><span>85%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div></div>
+      <div class="skill-card"><div class="skill-header"><h4>Desarrollo Web (HTML / CSS / JS)</h4><span>80%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div></div>
+      <div class="skill-card"><div class="skill-header"><h4>Narrativa & Estrategia Digital</h4><span>90%</span></div><div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div></div>
+    </div>
+  </section>
+
+  <section class="section-container" id="proceso">
+    <h2 class="section-title">Flujo de Trabajo</h2>
+    <p class="section-sub">Un método estructurado que garantiza entregas de nivel profesional.</p>
+    <div class="process-grid">
+      <div class="process-step"><div class="step-number">01</div><h3>Briefing & Estrategia</h3><p>Analizamos las necesidades de tu marca, objetivos clave y la audiencia a la que queremos llegar.</p></div>
+      <div class="process-step"><div class="step-number">02</div><h3>Concepto & Guion</h3><p>Estructuramos la idea visual, storyboard y referentes antes de iniciar la fase de producción.</p></div>
+      <div class="process-step"><div class="step-number">03</div><h3>Producción & Diseño</h3><p>Rodaje, sesiones fotográficas, diseño gráfico o edición de contenido con los mejores estándares.</p></div>
+      <div class="process-step"><div class="step-number">04</div><h3>Entrega & Optimización</h3><p>Ajustes finales, exportación multiformato para plataformas y entrega oficial lista para publicar.</p></div>
+    </div>
+  </section>
+
+  <section class="section-container" id="testimonios">
+    <h2 class="section-title">Lo que dicen mis clientes</h2>
+    <p class="section-sub">Opiniones reales de marcas y proyectos con los que he colaborado.</p>
+    <div class="reviews-grid">
+      <div class="review-card"><p class="review-text">"Fabián transformó por completo el estilo audiovisual de nuestras redes. Los Reels tienen un ritmo excelente y aumentaron nuestras interacciones desde el primer mes."</p><div class="review-author"><h4>Camila Torres</h4><span>Marca de Moda // Bogotá</span></div></div>
+      <div class="review-card"><p class="review-text">"El rediseño de nuestro logotipo e identidad visual superó nuestras expectativas. Súper profesional, rápido en la entrega y atento a cada detalle."</p><div class="review-author"><h4>Diego Morales</h4><span>Startup Tecnológica</span></div></div>
+    </div>
+  </section>
+
+  <section class="section-container" id="contacto">
+    <h2 class="section-title">Iniciar Proyecto</h2>
+    <p class="section-sub">Escríbeme para cotizar o agendar una consulta sobre tu marca.</p>
+    <div class="contact-wrapper">
+      <div>
+        <span class="card-tag">// CANAL DIRECTO</span>
+        <h3 style="font-size: 1.8rem; margin: 1rem 0;">¿Tienes una idea en mente?</h3>
+        <p style="color: var(--text-dim); line-height: 1.6; margin-bottom: 2rem;">Trabajo con empresas, creadores de contenido y marcas independientes que buscan diferenciarse. Completa los datos o escríbeme directamente por WhatsApp.</p>
+        <a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat Inmediato por WhatsApp</a>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Mensaje preparado. Redirigiendo a WhatsApp...'); window.open('https://wa.me/573022891516?text=Hola,%20mi%20nombre%20es%20'+document.getElementById('name').value+'%20y%20mi%20mensaje%20es:%20'+document.getElementById('msg').value, '_blank');">
+        <div class="form-group"><input type="text" id="name" placeholder="Tu Nombre o Empresa" required></div>
+        <div class="form-group"><input type="email" id="email" placeholder="Tu Correo Electrónico" required></div>
+        <div class="form-group"><textarea id="msg" rows="4" placeholder="Cuéntame sobre tu proyecto o idea..." required></textarea></div>
+        <button type="submit" class="btn-cyber">Enviar Mensaje <i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </section>
+
+  <!-- MODAL DE GALERÍA (todas las tarjetas abren esta ventana) -->
+  <div class="modal" id="galleryModal">
+    <div class="gallery-modal-content">
+      <span class="close-modal" id="closeGalleryModal">&times;</span>
+      <div class="gallery-modal-header">
+        <span class="card-tag" id="galleryModalTag">// CATEGORÍA</span>
+        <h2 id="galleryModalTitle">Título del Proyecto</h2>
+        <p id="galleryModalCount"></p>
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
   </div>
-</section>
 
-<footer>
-  <span>© 2026 Fabián González — Portafolio Multimedia</span>
-  <div class="foot-socials">
-    <a href="https://wa.me/573022891516" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.instagram.com/h_fabian07_?igsh=Y2VmcG56c2U3dTV6" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-instagram"></i>
-</a>
-    <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+  <!-- LIGHTBOX: imagen ampliada con navegación -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <span class="lightbox-prev" id="lightboxPrev">&#10094;</span>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="Foto ampliada">
+    <span class="lightbox-next" id="lightboxNext">&#10095;</span>
+    <span class="lightbox-counter" id="lightboxCounter"></span>
   </div>
-</footer>
 
-<a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="boton-whatsapp" aria-label="Escribir por WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="float-wa" aria-label="Escribir por WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
+  <footer>
+    <span>© 2026 Fabián González — Portafolio Multimedia Elite</span>
+    <div class="socials">
+      <a href="https://wa.me/573022891516" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-behance"></i></a>
+    </div>
+  </footer>
 </body>
 </html>
