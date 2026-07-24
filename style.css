@@ -1,15 +1,15 @@
-:root {
-      --bg-color: #050508;
-      --card-bg: rgba(15, 20, 32, 0.7);
-      --neon-gold: #cf9f4e;
-      --neon-gold-glow: rgba(207, 159, 78, 0.4);
-      --neon-cyan: #00f3ff;
-      --neon-cyan-glow: rgba(0, 243, 255, 0.4);
-      --text-main: #f8fafc;
-      --text-dim: #94a3b8;
-      --font-tech: 'JetBrains Mono', monospace;
-      --font-title: 'Space Grotesk', sans-serif;
-    }
+ :root{
+    --bg:#0b0b0f;
+    --bg-alt:#101015;
+    --card:#151318;
+    --card-border:rgba(244,241,232,0.08);
+    --text:#f3efe6;
+    --muted:#9d97a3;
+    --gold:#cf9f4e;
+    --gold-soft:#e6c688;
+    --teal:#3e948a;
+    --line:rgba(244,241,232,0.12);
+  }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{
