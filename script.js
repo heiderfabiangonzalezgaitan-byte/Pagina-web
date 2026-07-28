@@ -32,9 +32,7 @@
         // "https://tu-nueva-foto-aqui.jpg",
       ],
       fotografia: [
-        "https://githubusercontent.com",
-        "https://github.com/heiderfabiangonzalezgaitan-byte/Pagina-web/blob/main/IMG/1.jpeg",
-       miImagen.src = './carpeta-IMG/1.jpg';,
+        "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=900&q=80",
         "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=900&q=80",
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=900&q=80",
         "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80",
