@@ -6,7 +6,6 @@
        solo pega su URL como una línea nueva dentro del
        arreglo correspondiente, separada por coma.
        No hay límite: puedes tener 50, 100 o más por servicio. */
-    "https://githubusercontent.com"
       const galeriasProyectos = {
       logos: [
         "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=900&q=80",
@@ -33,6 +32,7 @@
         // "https://tu-nueva-foto-aqui.jpg",
       ],
       fotografia: [
+        "https://githubusercontent.com",
         "https://github.com/heiderfabiangonzalezgaitan-byte/Pagina-web/blob/main/IMG/1.jpeg",
         "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80",
         "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=900&q=80",
