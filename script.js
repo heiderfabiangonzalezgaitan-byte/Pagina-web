@@ -53,8 +53,6 @@
         "https://raw.githubusercontent.com/heiderfabiangonzalezgaitan-byte/Pagina-web/refs/heads/main/IMG/34.jpeg",
         "https://raw.githubusercontent.com/heiderfabiangonzalezgaitan-byte/Pagina-web/refs/heads/main/IMG/35.jpeg",
         "https://raw.githubusercontent.com/heiderfabiangonzalezgaitan-byte/Pagina-web/refs/heads/main/IMG/36.jpeg",
-        
-        
       
       ],
       paquete: [
