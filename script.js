@@ -31,7 +31,7 @@
         "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=900&q=80"
         // "https://tu-nueva-foto-aqui.jpg",
       ],
-      fotografia: [
+     fotografia: [
         "https://raw.githubusercontent.com/heiderfabiangonzalezgaitan-byte/Pagina-web/refs/heads/main/IMG/1.jpeg",
         "https://raw.githubusercontent.com/heiderfabiangonzalezgaitan-byte/Pagina-web/refs/heads/main/IMG/2.jpeg",
         "https://raw.githubusercontent.com/heiderfabiangonzalezgaitan-byte/Pagina-web/refs/heads/main/IMG/4.jpeg",
@@ -54,6 +54,8 @@
         "https://raw.githubusercontent.com/heiderfabiangonzalezgaitan-byte/Pagina-web/refs/heads/main/IMG/35.jpeg",
         "https://raw.githubusercontent.com/heiderfabiangonzalezgaitan-byte/Pagina-web/refs/heads/main/IMG/36.jpeg",
         
+        
+
       ],
       paquete: [
         "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80",
