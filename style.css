@@ -1,4 +1,14 @@
- :root {
+/* Hace que ninguna imagen mida más que la pantalla de tu celular */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Evita el desplazamiento horizontal incómodo si algo es muy ancho */
+body {
+    overflow-x: hidden;
+}
+:root {
       --bg-color: #050508;
       --card-bg: rgba(15, 20, 32, 0.7);
       --neon-gold: #cf9f4e;
