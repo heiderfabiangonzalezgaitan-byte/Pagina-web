@@ -8,13 +8,11 @@
   --text-main: #f8fafc;
   --text-dim: #94a3b8;
   --font-tech: 'JetBrains Mono', monospace;
-  --font-title: 'Space Grotesk', sans-serif;
-  --font-heading: 'Fraunces', serif; /* Variable agregada */
+  --font-title: 'Fraunces', serif; /* Aplicada como fuente base para todo el sitio */
 }
 
-/* Regla para aplicar Fraunces a los encabezados principales */
+/* Ajuste de interlineado y espaciado especifico para titulos */
 h1, h2, h3 {
-  font-family: var(--font-heading);
   line-height: 1.08;
   letter-spacing: -0.01em;
 }
