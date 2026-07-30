@@ -8,7 +8,7 @@
        No hay límite: puedes tener 50, 100 o más por servicio. */
       const galeriasProyectos = {
       logos: [
-        "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=900&q=80",
+        "https://raw.githubusercontent.com/heiderfabiangonzalezgaitan-byte/Pagina-web/refs/heads/main/IMG/Logo%201.png",
         "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=900&q=80",
         "https://images.unsplash.com/photo-1621600411688-4be93cd68504?auto=format&fit=crop&w=900&q=80"
         // "https://tu-nueva-foto-aqui.jpg",
