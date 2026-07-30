@@ -130,23 +130,47 @@ nav a:hover { color: var(--neon-gold); text-shadow: 0 0 8px var(--neon-gold-glow
 .section-sub { color: var(--text-dim); margin-bottom: 2.5rem; font-size: 0.98rem; }
 
 .filter-container { display: flex; gap: 0.8rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+
+/* --- BOTONES DE FILTRO (REDONDEADOS) --- */
 .filter-btn {
-  background: transparent; color: var(--text-dim); border: 1px solid rgba(207, 159, 78, 0.2);
-  padding: 0.5rem 1.2rem; font-family: var(--font-tech); font-size: 0.8rem; cursor: pointer; transition: all 0.3s ease;
+  background: transparent; 
+  color: var(--text-dim); 
+  border: 1px solid rgba(207, 159, 78, 0.2);
+  padding: 0.6rem 1.4rem; 
+  font-family: var(--font-tech); 
+  font-size: 0.8rem; 
+  cursor: pointer; 
+  transition: all 0.3s ease;
+  border-radius: 50px;
 }
-.filter-btn.active, .filter-btn:hover { background: var(--neon-gold); color: #000; border-color: var(--neon-gold); box-shadow: 0 0 12px var(--neon-gold-glow); }
+.filter-btn.active, .filter-btn:hover { 
+  background: var(--neon-gold); 
+  color: #000; 
+  border-color: var(--neon-gold); 
+  box-shadow: none; 
+}
 
 .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 2rem; }
 
+/* --- TARJETAS DEL PORTAFOLIO (REDONDEADAS) --- */
 .cyber-card {
-  background: var(--card-bg); border: 1px solid rgba(207, 159, 78, 0.2); position: relative;
-  overflow: hidden; backdrop-filter: blur(10px); transition: all 0.3s ease; cursor: pointer;
+  background: var(--card-bg); 
+  border: 1px solid rgba(207, 159, 78, 0.2); 
+  position: relative;
+  overflow: hidden; 
+  backdrop-filter: blur(10px); 
+  transition: all 0.3s ease; 
+  cursor: pointer;
+  border-radius: 20px;
 }
 .cyber-card::before {
-  content: ''; position: absolute; top: 0; left: 0; width: 10px; height: 10px;
-  border-top: 2px solid var(--neon-gold); border-left: 2px solid var(--neon-gold);
+  display: none;
 }
-.cyber-card:hover { transform: translateY(-6px); border-color: var(--neon-gold); box-shadow: 0 8px 25px var(--neon-gold-glow); }
+.cyber-card:hover { 
+  transform: translateY(-6px); 
+  border-color: var(--neon-gold); 
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); 
+}
 
 .card-thumb { height: 200px; overflow: hidden; position: relative; }
 .card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
