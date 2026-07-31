@@ -332,3 +332,51 @@ if (galleryModal) {
     }
   });
 }
+
+/* ==========================================
+   EFECTO MAQUINA DE ESCRIBIR (TEXTO DINÁMICO EN HERO)
+   ========================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const roles = [
+    "contar historias que impactan",
+    "crear experiencias digitales",
+    "elevar la presencia de tu marca",
+    "diseñar contenido de alto nivel"
+  ];
+  
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const targetElement = document.querySelector(".typing-text");
+
+  function typeEffect() {
+    if (!targetElement) return;
+
+    const currentRole = roles[roleIndex];
+    
+    if (isDeleting) {
+      targetElement.textContent = currentRole.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      targetElement.textContent = currentRole.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    let speed = isDeleting ? 40 : 80;
+
+    if (!isDeleting && charIndex === currentRole.length) {
+      speed = 2200; // Pausa cuando termina de escribir la frase
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      speed = 400; // Pausa antes de empezar la siguiente
+    }
+
+    setTimeout(typeEffect, speed);
+  }
+
+  if (targetElement) {
+    typeEffect();
+  }
+});
