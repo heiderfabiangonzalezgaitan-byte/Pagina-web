@@ -12,7 +12,7 @@
 }
 
 /* Reset Maestro para evitar desbordes */
-* { 
+*, *::before, *::after { 
   margin: 0; 
   padding: 0; 
   box-sizing: border-box; 
@@ -31,9 +31,22 @@ body {
   width: 100%;
   min-height: 100vh;
   position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Evitar desbordes de imágenes/videos por defecto */
+img, video {
+  max-width: 100%;
+  height: auto;
 }
 
 ::selection { background: var(--neon-gold); color: #000; }
+
+/* Accesibilidad al enfocar con teclado */
+:focus-visible {
+  outline: 2px solid var(--neon-gold);
+  outline-offset: 4px;
+}
 
 /* Ajuste de títulos */
 h1, h2, h3 {
@@ -41,13 +54,13 @@ h1, h2, h3 {
   letter-spacing: -0.01em;
 }
 
-/* --- OPTIMIZACIÓN DE RENDIMIENTO EN MÓVIL (Fondo y Canvas) --- */
+/* --- FONDO Y CANVAS --- */
 #canvas-bg { 
   position: fixed; 
   top: 0; 
   left: 0; 
-  width: 100%; /* Cambiado de 100vw a 100% para evitar desborde */
-  height: 100vh; 
+  width: 100%;
+  height: 100dvh; 
   z-index: -2; 
   pointer-events: none;
 }
@@ -74,7 +87,7 @@ header {
   justify-content: space-between; 
   align-items: center;
   padding: 1.2rem 8%;
-  background: rgba(5, 5, 8, 0.92); /* Fondo más opaco para reducir carga de render */
+  background: rgba(5, 5, 8, 0.92);
   border-bottom: 1px solid rgba(207, 159, 78, 0.2);
   position: fixed; 
   top: 0; 
@@ -82,7 +95,6 @@ header {
   z-index: 200;
 }
 
-/* Soporte progresivo de Blur solo si el dispositivo lo aguanta fluido */
 @supports (backdrop-filter: blur(10px)) {
   header {
     background: rgba(5, 5, 8, 0.85);
@@ -177,7 +189,6 @@ nav a:hover { color: var(--neon-gold); text-shadow: 0 0 8px var(--neon-gold-glow
   width: 100%;
 }
 
-/* Escalado dinámico de imagen para no romper en celular */
 .hero-visual img { 
   width: 100%; 
   height: auto;
@@ -243,7 +254,6 @@ nav a:hover { color: var(--neon-gold); text-shadow: 0 0 8px var(--neon-gold-glow
   border-color: var(--neon-gold); 
 }
 
-/* Grilla optimizada con minmax seguro para pantallas angostas */
 .portfolio-grid { 
   display: grid; 
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
@@ -363,7 +373,7 @@ nav a:hover { color: var(--neon-gold); text-shadow: 0 0 8px var(--neon-gold-glow
 }
 .float-wa:hover { transform: scale(1.1); }
 
-/* --- MODAL Y LIGHTBOX (SOPORTE PARA IMÁGENES Y VIDEOS) --- */
+/* --- MODAL Y LIGHTBOX --- */
 .modal {
   display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(5, 5, 8, 0.95);
   align-items: center; justify-content: center; padding: 1rem;
@@ -384,7 +394,6 @@ nav a:hover { color: var(--neon-gold); text-shadow: 0 0 8px var(--neon-gold-glow
 
 .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
 
-/* Regla combinada para imágenes y videos en el modal */
 .gallery-grid img,
 .gallery-grid video {
   width: 100%; 
@@ -443,24 +452,26 @@ footer {
 footer .socials a { color: var(--text-dim); margin-left: 1rem; font-size: 1.1rem; transition: color 0.3s; }
 footer .socials a:hover { color: var(--neon-gold); }
 
-/* --- REGLAS RESPONSIVE PARA CELULARES (MEDIA QUERIES) --- */
+/* --- REGLAS RESPONSIVE PARA CELULARES --- */
 @media (max-width: 850px) {
   header {
     padding: 1rem 5%;
     flex-wrap: wrap;
   }
 
-  /* Ajuste de menú en celular para que no se salga */
   nav ul {
-    gap: 1rem;
+    gap: 1.2rem;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 0.8rem;
     overflow-x: auto;
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
   }
   
-  nav a { font-size: 0.78rem; }
+  nav ul::-webkit-scrollbar { display: none; } /* Oculta scrollbar en Chrome/Safari */
+  
+  nav a { font-size: 0.78rem; white-space: nowrap; }
 
   .hero { 
     grid-template-columns: 1fr; 
