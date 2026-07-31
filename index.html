@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
 </head>
 <body>
@@ -26,23 +26,26 @@
         <li><a href="#skills">// Herramientas</a></li>
         <li><a href="#proceso">// Proceso</a></li>
         <li><a href="#contacto">// Contacto</a></li>
-        <li><a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="nav-cta">Cotizar</a></li>
+        <li><a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="nav-cta btn-glow">Cotizar</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero" id="inicio">
     <div>
-      <div class="badge-status">● CREADOR DE CONTENIDO MULTIMEDIA</div>
-      <h1>Donde la creatividad se encuentra con la tecnología para <em>contar historias que impactan</em></h1>
+      <div class="badge-status">CREADOR DE CONTENIDO MULTIMEDIA</div>
+      <h1>Donde la creatividad se encuentra con la tecnología para <em class="typing-text">contar historias que impactan</em></h1>
       <p>Soy Fabián González. En este espacio encontrarás una selección de mis mejores proyectos, donde combino diseño, audio, video y narrativa digital para transformar ideas en experiencias visuales impactantes.</p>
       <div class="hero-actions">
-        <a href="#portafolio" class="btn-cyber">Explorar trabajo <i class="fas fa-arrow-right"></i></a>
+        <a href="#portafolio" class="btn-cyber btn-glow">Explorar trabajo <i class="fas fa-arrow-right"></i></a>
         <a href="#contacto" class="btn-ghost">Hablemos de tu proyecto</a>
       </div>
     </div>
     <div class="hero-visual">
-      <img src="https://raw.githubusercontent.com/heiderfabiangonzalezgaitan-byte/Pagina-web/refs/heads/main/IMG/38.jpeg" alt="Producción Audiovisual">
+      <!-- Wrapper para borde degradado animado -->
+      <div class="hero-media-wrapper">
+        <img src="https://raw.githubusercontent.com/heiderfabiangonzalezgaitan-byte/Pagina-web/refs/heads/main/IMG/38.jpeg" alt="Producción Audiovisual">
+      </div>
       <div class="hero-tag">Bogotá, Colombia // Diseño · Video · Fotografía</div>
     </div>
   </section>
@@ -94,7 +97,7 @@
       </div>
 
       <div class="cyber-card fotografia" data-title="Fotografía de Producto y Corporativa" data-tag="Fotografía" data-gallery-key="fotografia">
-        <div class="card-thumb"><img src="https://raw.githubusercontent.com/heiderfabiangonzalezgaitan-byte/Pagina-web/refs/heads/main/IMG/37.png? auto=format&fit=crop&w=600&q=80" alt="Fotografía Profesional"></div>
+        <div class="card-thumb"><img src="https://raw.githubusercontent.com/heiderfabiangonzalezgaitan-byte/Pagina-web/refs/heads/main/IMG/37.png?auto=format&fit=crop&w=600&q=80" alt="Fotografía Profesional"></div>
         <div class="card-body"><span class="card-tag">// Fotografía</span><h3>Fotografía de Producto y Corp</h3><p>Capturas profesionales con iluminación y dirección artística adaptada a tu sector.</p></div>
       </div>
 
@@ -152,12 +155,12 @@
         <div class="form-group"><input type="text" id="name" placeholder="Tu Nombre o Empresa" required></div>
         <div class="form-group"><input type="email" id="email" placeholder="Tu Correo Electrónico" required></div>
         <div class="form-group"><textarea id="msg" rows="4" placeholder="Cuéntame sobre tu proyecto o idea..." required></textarea></div>
-        <button type="submit" class="btn-cyber">Enviar Mensaje <i class="fas fa-paper-plane"></i></button>
+        <button type="submit" class="btn-cyber btn-glow">Enviar Mensaje <i class="fas fa-paper-plane"></i></button>
       </form>
     </div>
   </section>
 
-  <!-- MODAL DE GALERÍA (todas las tarjetas abren esta ventana) -->
+  <!-- MODAL DE GALERÍA -->
   <div class="modal" id="galleryModal">
     <div class="gallery-modal-content">
       <span class="close-modal" id="closeGalleryModal">&times;</span>
@@ -170,7 +173,7 @@
     </div>
   </div>
 
-  <!-- LIGHTBOX: imagen ampliada con navegación -->
+  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
     <span class="lightbox-close" id="lightboxClose">&times;</span>
     <span class="lightbox-prev" id="lightboxPrev">&#10094;</span>
@@ -179,14 +182,13 @@
     <span class="lightbox-counter" id="lightboxCounter"></span>
   </div>
 
-  <a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="float-wa" aria-label="Escribir por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://wa.me/573022891516?text=Hola,%20vi%20tu%20portafolio%20multimedia%20y%20quiero%20cotizar%20un%20proyecto%20contigo." target="_blank" class="float-wa whatsapp-float" aria-label="Escribir por WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
   <footer>
     <span>© 2026 Fabián González — Portafolio Multimedia Elite</span>
     <div class="socials">
       <a href="https://wa.me/573022891516" target="_blank"><i class="fab fa-whatsapp"></i></a>
       <a href="https://www.instagram.com/by.fg_portafolio?igsh=aWxzYmRrcXhlcmtw"><i class="fab fa-instagram"></i></a>
-     
       <a href="#"><i class="fab fa-behance"></i></a>
     </div>
   </footer>
